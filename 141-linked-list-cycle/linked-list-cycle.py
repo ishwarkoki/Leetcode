@@ -5,19 +5,32 @@
 #         self.next = None
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool: 
+    def hasCycle(self, head: Optional[ListNode]) -> bool:  
 
-        hashset = set() 
+        # Hair and Tortoise Algorithm - 2 pointer Algo (slo and fast) it will always detect a cycle 
 
-        while head : 
-            
-            if head not in hashset : 
-                hashset.add(head)
-                head  = head.next 
+        slow, fast = head, head 
 
-            else : 
+        while fast and fast.next : 
+            slow = slow.next 
+            fast = fast.next.next 
+
+            if slow == fast : 
                 return True 
 
         return False 
+
+
+        '''
+        Visualise - 1-> 2 -> 3 -> 4 -> 5 -> 2 
+
+                    s   s    s    s    s 
+                        s
+                    f        f         f  
+                        f         f  
+                        f 
+
+        ''' 
+        
 
         
