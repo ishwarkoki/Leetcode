@@ -10,23 +10,26 @@ class Solution:
             else : smap[i] = 1 
 
         nums = list(smap.values())
+        
+        seen = set() 
 
-        nums.sort(reverse = True) 
+        for i in range(len(nums)) : 
 
-        l, r = 0, 1 
-
-        while r < len(nums): 
-
-            while nums[l] <= nums[r] and nums[r] != 0 : 
-                nums[r] -= 1 
+            while nums[i] and nums[i] in seen : 
+                nums[i] -=1 
                 result += 1 
 
-            l ,r = l+1, r+1  
+            else : 
+                seen.add(nums[i]) 
 
         return result 
 
 
-        
+
+
+        # Time : O(N) + O(KlogK) + O(K**2) 
+        # Space : O(N) 
+         
 
             
 
