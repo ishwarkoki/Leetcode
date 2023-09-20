@@ -7,6 +7,9 @@ class Solution:
 
         req_sum = sum(nums) - x 
 
+        if req_sum < 0 : 
+            return -1 
+
         for r in range(n): 
             cur_sum += nums[r]  # expand the window 
 
