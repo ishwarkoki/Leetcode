@@ -8,7 +8,7 @@ class Solution:
 
         for key, value in counter.items() : 
             if value > 1 : 
-                ans += math.comb(value, 2)
+                ans += sum(range(1,value))
 
         return ans 
 
