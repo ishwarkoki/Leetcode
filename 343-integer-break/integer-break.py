@@ -1,26 +1,25 @@
 class Solution:
     def integerBreak(self, n: int) -> int:
+
+        dp = [-1] * (n+1)
         
-        def solve(n, memo = {}): 
+        def solve(n, dp): 
 
-            if n in memo:
-                return memo[n]
-            if n == 2:
-                return 1
-            max_product = 0
-            
-            for i in range(1, n):
-                # Calculate the product of breaking n into i and (n - i)
-                product = i * (n - i)
-                # Recursively calculate the product for (n - i)
-                remaining_product = i * solve(n - i)
-                # Take the maximum of the current product and remaining_product
-                max_product = max(max_product, max(product, remaining_product))
-            
-            memo[n] = max_product
-            return memo[n]
+            ans = -1  
 
-        return solve(n) 
+            if dp[n] != -1 : 
+                return dp[n] 
+
+            if n == 1 or n ==2 : 
+                return 1 
+
+            for i in range(1,n): 
+                ans = max(ans, i* (n-i), i* solve(n-i,dp))
+        
+            dp[n] = ans 
+            return dp[n] 
+
+        return solve(n, dp) 
     
 
 
