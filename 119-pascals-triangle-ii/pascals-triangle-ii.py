@@ -11,5 +11,5 @@ class Solution:
 
             triangle.append(row) 
 
-        return triangle[-1]
+        return triangle[-1] 
         
