@@ -1,12 +1,20 @@
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
 
-        newNums = [i for i in set(nums)] 
-        newNums.sort()
-        
-        if len(newNums) < 3 : 
-            return max(newNums) 
+        max1, max2, max3 = float('-inf'), float('-inf'), float('-inf') 
 
-        else : 
-            return newNums[-3] 
+        for num in set(nums): 
+
+            if num > max1 : 
+                max3, max2, max1 = max2, max1, num 
+
+            elif num > max2 : 
+                max3, max2 = max2 , num 
+
+            elif num > max3 : 
+                max3 = num 
+
+        sum_ = sum([max1, max2, max3]) 
+
+        return max1 if sum_ == float('-inf') else max3 
         
