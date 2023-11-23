@@ -4,12 +4,20 @@ class Solution:
 
         def is_arithmetic_sequence(arr) : 
 
-            arr.sort()
+            n = len(arr) 
+            arr_set = set(arr)
 
-            d = arr[1] - arr[0] 
+            min_ele = min(arr) 
+            max_ele = max(arr) 
 
-            for i in range(2,len(arr)): 
-                if arr[i] - arr[i-1] != d : 
+            d = (max_ele - min_ele)/(n-1) 
+
+            cur_ele = min_ele 
+
+            while cur_ele < max_ele: 
+                cur_ele = cur_ele + d 
+
+                if cur_ele not in arr_set : 
                     return False 
 
             return True 
