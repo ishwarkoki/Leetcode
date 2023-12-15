@@ -1,14 +1,30 @@
 class Solution:
-  def destCity(self, paths: List[List[str]]) -> str:
-    count = collections.Counter()
+  def destCity(self, paths: List[List[str]]) -> str: 
+      city = set() 
 
-    for a, b in paths:
-      count[a] += 1
+      for start, end in paths : 
+          city.add(start) 
 
-    for a, b in paths:
-      if b in count:
-        count[b] -= 1
-        if count[b] == 0:
-          del count[b]
-      else:
-        return b
+      for start, end in paths : 
+          if end not in city : 
+              return end 
+
+
+         
+
+         
+
+    
+      
+
+
+    
+
+
+
+
+
+
+    
+
+    
