@@ -9,7 +9,7 @@ class Solution:
                 freq_map[char] += 1 
 
 
-        for key, val in freq_map.items() : 
+        for val in freq_map.values() : 
             if val % n != 0 : return False 
 
 
