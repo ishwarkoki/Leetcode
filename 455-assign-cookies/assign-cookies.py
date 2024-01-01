@@ -1,6 +1,6 @@
 class Solution:
     def findContentChildren(self, g: List[int], s: List[int]) -> int:
-        ans = 0 
+
         g.sort() 
         s.sort() 
         i, j = 0, 0 
@@ -14,6 +14,4 @@ class Solution:
 
         return i 
 
-
-        return ans  
         
