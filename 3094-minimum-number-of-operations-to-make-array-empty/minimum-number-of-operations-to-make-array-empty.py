@@ -4,9 +4,9 @@ class Solution:
         c = Counter(nums) 
         ans = 0 
 
+        if min(c.values()) == 1 : return -1 
+
         for num in c.values(): 
-            
-            if num == 1 : return -1 
 
             ans += ceil(num/3) 
 
