@@ -10,21 +10,20 @@ class Solution:
         ans = 0 
 
         def dfs(node, arr): 
+            nonlocal ans 
 
             if not node : 
                 return 
 
             dfs(node.left, arr)
-            arr.append(node.val) 
+            if node.val >= low and node.val <= high : ans += node.val
             dfs(node.right, arr) 
 
         dfs(root, arr) 
 
-        for num in arr: 
-            if num >= low and num <= high : 
-                ans += num 
-
         return ans 
+
+        
 
                 
 
