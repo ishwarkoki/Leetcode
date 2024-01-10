@@ -1,1 +1,1 @@
-<h2>amount-of-time-for-binary-tree-to-be-infected Notes</h2><hr>First traverse and find 
+<h2>amount-of-time-for-binary-tree-to-be-infected Notes</h2><hr>First traverse and find the target node. 
